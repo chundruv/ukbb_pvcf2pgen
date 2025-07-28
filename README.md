@@ -10,7 +10,7 @@ For the X-chromosome, the code will halve the DP threshold for males automatical
 To build the applet use `dxpy`
 
 ```
-git clone git@github.com:chundruv/ukbb_pvcf2pgen.git
+git clone https://github.com/chundruv/ukbb_pvcf2pgen.git
 cd ukbb_pvcf2pgen
 dx build -f -d ${PROJECT_ID}:${PATH}
 ```
