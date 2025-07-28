@@ -1,0 +1,125 @@
+{
+  "name": "plink_conv",
+  "title": "plink_conv",
+  "summary": "plink_conv",
+  "dxapi": "1.0.0",
+  "version": "1.0.0",
+  "inputSpec": [
+    {
+      "name": "vcf_list",
+      "label": "vcf_list",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*"
+      ],
+      "help": "vcf_list"
+    },
+    {
+      "name": "processes",
+      "label": "processes",
+      "class": "string",
+      "optional": false,
+      "patterns": [
+        "*"
+      ],
+      "help": "processes"
+    },
+    {
+      "name": "mem",
+      "label": "mem",
+      "class": "string",
+      "optional": false,
+      "patterns": [
+        "*"
+      ],
+      "help": "memory per plink process"
+    },
+    {
+      "name": "sex_file",
+      "label": "sex_file",
+      "class": "file",
+      "optional": true,
+      "patterns": [
+        "*"
+      ],
+      "help": "file with header #IID SEX"
+    },
+    {
+      "name": "PAR",
+      "label": "PAR",
+      "class": "boolean",
+      "optional": false,
+      "default": false,
+      "help": "In pseudoautosomal region"
+    },
+    {
+      "name": "outdir",
+      "label": "outdir",
+      "class": "string",
+      "optional": false,
+      "default": false,
+      "help": "Output directory"
+    },
+    {
+      "name": "mingq",
+      "label": "mingq",
+      "class": "string",
+      "optional": false,
+      "default": false,
+      "help": "Minimum GQ"
+    },
+    {
+      "name": "mindp",
+      "label": "mindp",
+      "class": "string",
+      "optional": false,
+      "default": false,
+      "help": "Minimum DP"
+    },
+    {
+      "name": "maxmiss",
+      "label": "maxmiss",
+      "class": "string",
+      "optional": false,
+      "default": false,
+      "help": "Maximum genotype missingness per variant"
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "output",
+      "label": "Output String",
+      "class": "string",
+      "help": "Output string"
+    }
+  ],
+  "runSpec": {
+    "timeoutPolicy": {
+      "*": {
+        "days": 5
+      }
+    },
+    "interpreter": "bash",
+    "release": "24.04",
+    "distribution": "Ubuntu",
+    "file": "src/convert.sh",
+    "version": "0"
+  },
+  "access": {
+    "project": "CONTRIBUTE",   
+    "allProjects": "VIEW",
+  "network": [
+      "*"
+    ]
+  },
+  "regionalOptions": {
+    "aws:eu-west-2": {
+      "systemRequirements": {
+        "*": {
+          "instanceType": "mem3_ssd1_v2_x8"
+        }
+      }
+    }
+  }
+}
