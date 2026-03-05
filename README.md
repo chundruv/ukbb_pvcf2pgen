@@ -15,6 +15,10 @@ cd ukbb_pvcf2pgen
 dx build -f -d ${PROJECT_ID}:${PATH}
 ```
 
+## Left aligning
+
+Plink left-aligning has a small bug affecting a handful of variants (~5k / 1billion). "bcftools norm" can be used to left-align the pvar files and remerge after conversion to fix these variants, or remove duplicate IDs.
+
 ## Using applet
 
 Parameters:
